@@ -1,20 +1,20 @@
 package com.ljy.learn.proxy.dynamicproxy;
 
 /**
- * @author : Ï¦
+ * @author : å¤•
  * @date : 2019/8/8
  */
 public class Client {
 
     public static void main(String[] args) {
-        //´´½¨Ä¿±ê¶ÔÏó
+        //åˆ›å»ºç›®æ ‡å¯¹è±¡
         Teacherable target = new Teacher();
 
-        //¸øÄ¿±ê¶ÔÏó£¬´´½¨´úÀí¶ÔÏó
+        //ç»™ç›®æ ‡å¯¹è±¡ï¼Œåˆ›å»ºä»£ç†å¯¹è±¡
         Teacherable proxyInstance = (Teacherable) new ProxyFactory(target).getProxyInstance();
-        //class com.sun.proxy.$Proxy0  ÄÚ´æÖĞ¶¯Ì¬Éú³ÉÁË´úÀí¶ÔÏó
+        //class com.sun.proxy.$Proxy0  å†…å­˜ä¸­åŠ¨æ€ç”Ÿæˆäº†ä»£ç†å¯¹è±¡
         System.out.println(proxyInstance.getClass());
-        //Í¨¹ı´úÀí¶ÔÏóµ÷ÓÃÄ¿±ê¶ÔÏóµÄ·½·¨
+        //é€šè¿‡ä»£ç†å¯¹è±¡è°ƒç”¨ç›®æ ‡å¯¹è±¡çš„æ–¹æ³•
         proxyInstance.Teach("ljy");
 
     }

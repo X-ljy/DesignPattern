@@ -1,12 +1,12 @@
 package com.ljy.learn.proxy.cglibproxy;
 
 /**
- * @author : Ï¦
+ * @author : å¤•
  * @date : 2019/8/9
  */
 public class Teacher {
     void Teach(String name) {
-        System.out.println("Cglib´úÀí: " + name + " : ÕıÔÚÊÚ¿Î");
+        System.out.println("Cglibä»£ç†: " + name + " : æ­£åœ¨æˆè¯¾");
     }
 
 }

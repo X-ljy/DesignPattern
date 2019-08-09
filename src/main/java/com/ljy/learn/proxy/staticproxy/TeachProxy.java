@@ -1,24 +1,24 @@
 package com.ljy.learn.proxy.staticproxy;
 
 /**
- * @author : Ï¦
+ * @author : å¤•
  * @date : 2019/8/8
  */
 
-//´úÀí¶ÔÏó£¬¾²Ì¬´úÀí
+//ä»£ç†å¯¹è±¡ï¼Œé™æ€ä»£ç†
 public class TeachProxy implements Teacherable {
 
-    private Teacherable target; //  Ä¿±ê¶ÔÏó£¬Í¨¹ı½Ó¿Ú¾ÛºÏ
+    private Teacherable target; //  ç›®æ ‡å¯¹è±¡ï¼Œé€šè¿‡æ¥å£èšåˆ
 
-    //¹¹ÔìÆ÷
+    //æ„é€ å™¨
     public TeachProxy(Teacherable target) {
         this.target = target;
     }
 
     @Override
     public void Teach() {
-        System.out.println("´úÀí¿ªÊ¼ Íê³ÉÄ³Ğ©²Ù×÷");
+        System.out.println("ä»£ç†å¼€å§‹ å®ŒæˆæŸäº›æ“ä½œ");
         target.Teach();
-        System.out.println("´úÀí½áÊø¡£¡£¡£¡£");
+        System.out.println("ä»£ç†ç»“æŸã€‚ã€‚ã€‚ã€‚");
     }
 }

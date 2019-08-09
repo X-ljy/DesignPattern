@@ -1,24 +1,24 @@
 package com.ljy.learn.proxy.staticproxy;
 
 /**
- * @author : Ï¦
+ * @author : å¤•
  * @date : 2019/8/8
  */
 public class Client {
     /**
-     * ´´½¨Teach¶ÔÏó
-     * ´´½¨TeachProxy´úÀí¶ÔÏó
-     * ½«Teach¶ÔÏó£¬½»¸øTeachProxy¶ÔÏóÖ´ÐÐ·½·¨
+     * åˆ›å»ºTeachå¯¹è±¡
+     * åˆ›å»ºTeachProxyä»£ç†å¯¹è±¡
+     * å°†Teachå¯¹è±¡ï¼Œäº¤ç»™TeachProxyå¯¹è±¡æ‰§è¡Œæ–¹æ³•
      *
      * @param args
      */
     public static void main(String[] args) {
-        //´´½¨Ä¿±ê¶ÔÏó£¬±»´úÀí¶ÔÏó
+        //åˆ›å»ºç›®æ ‡å¯¹è±¡ï¼Œè¢«ä»£ç†å¯¹è±¡
         Teach teach = new Teach();
-        //´´½¨´úÀí¶ÔÏó£¬Í¬Ê±½«±»´úÀí¶ÔÏó´«µÝ¸ø´úÀí¶ÔÏó
+        //åˆ›å»ºä»£ç†å¯¹è±¡ï¼ŒåŒæ—¶å°†è¢«ä»£ç†å¯¹è±¡ä¼ é€’ç»™ä»£ç†å¯¹è±¡
         TeachProxy teachProxy = new TeachProxy(teach);
-        //Í¨¹ý´úÀí¶ÔÏó£¬µ÷ÓÃ´úÀí¶ÔÏóµÄ·½·¨
-        //Ö´ÐÐµÄÊÇ´úÀí¶ÔÏóµÄ·½·¨£¬´úÀí¶ÔÏóÔÙÈ¥µ÷ÓÃÄ¿±ê¶ÔÏóµÄ·½·¨
+        //é€šè¿‡ä»£ç†å¯¹è±¡ï¼Œè°ƒç”¨ä»£ç†å¯¹è±¡çš„æ–¹æ³•
+        //æ‰§è¡Œçš„æ˜¯ä»£ç†å¯¹è±¡çš„æ–¹æ³•ï¼Œä»£ç†å¯¹è±¡å†åŽ»è°ƒç”¨ç›®æ ‡å¯¹è±¡çš„æ–¹æ³•
         teachProxy.Teach();
     }
 }

@@ -5,38 +5,38 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 /**
- * @author : Ï¦
+ * @author : å¤•
  * @date : 2019/8/8
  */
 public class ProxyFactory {
 
-    //Î¬»¤Ò»¸öÄ¿±ê¶ÔÏó£¬Object
+    //ç»´æŠ¤ä¸€ä¸ªç›®æ ‡å¯¹è±¡ï¼ŒObject
     private Object target;
 
-    //¹¹ÔìÆ÷£¬¶Ôtarget½øĞĞ³õÊ¼»¯
+    //æ„é€ å™¨ï¼Œå¯¹targetè¿›è¡Œåˆå§‹åŒ–
     public ProxyFactory(Object target) {
         this.target = target;
     }
 
-    //¸øÄ¿±ê¶ÔÏó£¬Éú³ÉÒ»¸ö´úÀí¶ÔÏó
+    //ç»™ç›®æ ‡å¯¹è±¡ï¼Œç”Ÿæˆä¸€ä¸ªä»£ç†å¯¹è±¡
     public Object getProxyInstance() {
         /**
          * public static Object newProxyInstance(ClassLoader loader,
          *                                       Class<?>[] interfaces,
          *                                       InvocationHandler h)
-         * 1. ClassLoad loader : Ö¸¶¨µ±Ç°Ä¿±ê¶ÔÏóÊ¹ÓÃµÄÀà¼ÓÔØÆ÷£¬»ñÈ¡¼ÓÔØÆ÷µÄ·½·¨¹Ì¶¨
-         * 2. Class<?>[] interfaces£ºÄ¿±ê¶ÔÏóÊµÏÖµÄ½Ó¿ÚÀàĞÍ£¬Ê¹ÓÃ·ºĞÍ·½·¨È·ÈÏÀàĞÍ
-         * 3. InvocationHandler h : ÊÂ¼ş´¦Àí£¬Ö´ĞĞÄ¿±ê¶ÔÏóµÄ·½·¨Ê±£¬»á´¥·¢ÊÂ¼ş´¦ÀíÆ÷·½·¨£¬£¨»á°Ñµ±Ç°Ö´ĞĞµÄÄ¿±ê¶ÔÏó×÷Îª²ÎÊı´«Èë£©
+         * 1. ClassLoad loader : æŒ‡å®šå½“å‰ç›®æ ‡å¯¹è±¡ä½¿ç”¨çš„ç±»åŠ è½½å™¨ï¼Œè·å–åŠ è½½å™¨çš„æ–¹æ³•å›ºå®š
+         * 2. Class<?>[] interfacesï¼šç›®æ ‡å¯¹è±¡å®ç°çš„æ¥å£ç±»å‹ï¼Œä½¿ç”¨æ³›å‹æ–¹æ³•ç¡®è®¤ç±»å‹
+         * 3. InvocationHandler h : äº‹ä»¶å¤„ç†ï¼Œæ‰§è¡Œç›®æ ‡å¯¹è±¡çš„æ–¹æ³•æ—¶ï¼Œä¼šè§¦å‘äº‹ä»¶å¤„ç†å™¨æ–¹æ³•ï¼Œï¼ˆä¼šæŠŠå½“å‰æ‰§è¡Œçš„ç›®æ ‡å¯¹è±¡ä½œä¸ºå‚æ•°ä¼ å…¥ï¼‰
          */
         return Proxy.newProxyInstance(target.getClass().getClassLoader(),
                 target.getClass().getInterfaces(),
                 new InvocationHandler() {
                     @Override
                     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-                        System.out.println("JDK ´úÀí¿ªÊ¼");
-                        //·´Éä»úÖÆµ÷ÓÃÄ¿±ê¶ÔÏóµÄ·½·¨
+                        System.out.println("JDK ä»£ç†å¼€å§‹");
+                        //åå°„æœºåˆ¶è°ƒç”¨ç›®æ ‡å¯¹è±¡çš„æ–¹æ³•
                         Object returnVal = method.invoke(target, args);
-                        System.out.println("JDK ´úÀí½áÊø");
+                        System.out.println("JDK ä»£ç†ç»“æŸ");
                         return returnVal;
                     }
                 });
