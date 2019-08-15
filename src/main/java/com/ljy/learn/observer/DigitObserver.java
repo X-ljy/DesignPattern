@@ -13,8 +13,5 @@ public class DigitObserver implements Observer {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
     }
-
-
 }
